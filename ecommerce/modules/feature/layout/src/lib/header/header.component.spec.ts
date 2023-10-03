@@ -6,6 +6,7 @@ describe('HeaderComponent', () => {
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
+
     await TestBed.configureTestingModule({
       declarations: [HeaderComponent],
     }).compileComponents();
@@ -17,5 +18,10 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain title', () => {
+    const header : HTMLHeadingElement = fixture.nativeElement.querySelector('header');
+    expect(header.textContent).toBe('Ecommerce');
   });
 });
