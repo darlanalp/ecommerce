@@ -4,6 +4,7 @@ import { LayoutModule } from 'modules/layout';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { Component } from '@angular/core';
+import { ProductSearchComponent } from 'product-search';
 
 describe('AppComponent', () => {
 
@@ -11,7 +12,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, LayoutModule],
+      imports: [RouterTestingModule, LayoutModule, ProductSearchComponent],
       declarations: [AppComponent],
     }).compileComponents();
 
@@ -20,9 +21,9 @@ describe('AppComponent', () => {
 
   it('should contain header', () => {
 
-    const header : HTMLHeadingElement = fixture.nativeElement.querySelector('header');
+    const header: HTMLHeadingElement = fixture.nativeElement.querySelector('header');
     expect(header).toBeTruthy();
-    
+
   })
 
 });
