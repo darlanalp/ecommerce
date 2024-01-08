@@ -41,4 +41,21 @@ describe('ProductSearchService', () => {
     expect(result).toEqual(mockProducts);
   });
 
+
+  it('should retorna o models corretamente por id do produto', () => {
+
+    //Arrange
+    const mockId = '123';
+    const url = `${service.apiUrl}/products/${mockId}`;
+    let result!: Product;
+
+    //Action
+    service.getById(mockId).subscribe((product) => (result = product));
+
+    //Assert
+    const request = httpMock.expectOne(url);//Garante que a Url executada pelo service é a mesma do teste 
+    request.flush(mockProducts[0]); //retorna o body do http mockado 
+    expect(request.request.method).toBe('GET'); //testa se o tipo da requisição ta ok
+    expect(result).toEqual(mockProducts[0]);
+  });
 });
