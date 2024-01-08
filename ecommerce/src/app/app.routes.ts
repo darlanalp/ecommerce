@@ -11,4 +11,10 @@ export const appRoutes: Route[] = [
         path: 'home',
         loadChildren: () => import('home').then((m) => m.HomeModule),
     },
+    {
+        //Observação: loadChildren não funciona com standalone component, utilize o  loadComponent 
+        path: 'product',
+        loadChildren: () => import('product-detail').then((m) => m.productDetailRoutes),
+    }
+    ,
 ];

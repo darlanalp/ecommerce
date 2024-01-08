@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormControl, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ProductSearchService, mockProducts } from 'product-data-access';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { __values } from 'tslib';
 import { debounceTime } from 'rxjs/internal/operators/debounceTime';
-import { distinctUntilChanged, filter, map, switchMap, Observable } from 'rxjs';
-import { NonNullAssert } from '@angular/compiler';
+import { distinctUntilChanged, filter, switchMap, Observable } from 'rxjs';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'lib-product-search',
@@ -19,7 +21,8 @@ import { NonNullAssert } from '@angular/compiler';
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.scss'],
