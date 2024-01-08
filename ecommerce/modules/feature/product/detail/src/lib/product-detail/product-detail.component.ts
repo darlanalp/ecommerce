@@ -1,7 +1,9 @@
+import { Product } from './../../../../../../data-access/product/src/lib/models/product.model';
+import { ProductSearchService } from 'product-data-access';
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 
 /**
  * Este exemplo é para demonstrar que podemos criar funcções separadas 
@@ -26,6 +28,9 @@ function getParamsId(): Observable<string> {
 })
 
 export class ProductDetailComponent {
-  constructor() { }
-  id$ = getParamsId();
+
+  constructor(private productSearchService: ProductSearchService) { }
+  produtct$: Observable<Product> = getParamsId().pipe(
+    switchMap(id => this.productSearchService.getById(id))
+  );
 }
