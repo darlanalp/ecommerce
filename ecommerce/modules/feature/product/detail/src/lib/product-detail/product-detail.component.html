@@ -1,1 +1,17 @@
-<p>{{produtct$ | async | json}}</p>
+<main class="product-detail">
+    <section class="product-detail__section">
+        <!--ng-container - recurso do angular que vc concentre regras sem 
+        a neceessidade de utilizar tag HTML que não serão utilizadas,  no exemplo
+    abaixo ao inves de usar uma div usamos o ng-container.
+É importante ressaltar que o ng-container não vai para o HMTL, ajudando a
+não sujar o HTML-->
+        <ng-container *ngIf="product$ | async as product"> <!--product - acaba sendo uma variavel de template-->
+            <lib-product-card [product]="product"></lib-product-card>
+            <div class="product-detail__info">
+                <h2>{{ product.description }}</h2>
+                <p>{{ product.quantity | quantityDescription }}</p>
+                <button mat-raised-button color="primary">Adicionar ao carrinho</button>
+            </div>
+        </ng-container>
+    </section>
+</main>

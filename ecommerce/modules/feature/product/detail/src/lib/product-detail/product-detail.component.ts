@@ -1,9 +1,14 @@
 import { Product } from './../../../../../../data-access/product/src/lib/models/product.model';
 import { ProductSearchService } from 'product-data-access';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map, switchMap } from 'rxjs';
+import { ProductCardComponent } from 'product-ui';
+import { MatButtonModule } from '@angular/material/button';
+import { QuantityDescriptionPipe } from '../pipes/quantity-description/quantity-description.pipe';
+
+//Aula do dia 18/12/2023
 
 /**
  * Este exemplo é para demonstrar que podemos criar funcções separadas 
@@ -22,7 +27,7 @@ function getParamsId(): Observable<string> {
 @Component({
   selector: 'lib-product-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductCardComponent, MatButtonModule, QuantityDescriptionPipe],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
 })
@@ -30,7 +35,7 @@ function getParamsId(): Observable<string> {
 export class ProductDetailComponent {
 
   constructor(private productSearchService: ProductSearchService) { }
-  produtct$: Observable<Product> = getParamsId().pipe(
+  product$: Observable<Product> = getParamsId().pipe(
     switchMap(id => this.productSearchService.getById(id))
   );
 }
