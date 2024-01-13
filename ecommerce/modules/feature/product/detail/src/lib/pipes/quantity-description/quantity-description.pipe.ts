@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//Aula do dia 18/12/2023
+
 @Pipe({
   name: 'quantityDescription',
   standalone: true,
