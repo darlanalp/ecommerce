@@ -6,4 +6,5 @@ export type Product = {
     description: string
     image: string
     id: string
+    quantity: number
 }
