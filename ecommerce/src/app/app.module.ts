@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductSearchComponent } from 'product-search';
 import { HttpErrorsInterceptor } from './interceptors/http-errors/http-errors.interceptor';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CartComponent } from 'product-ui';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -20,7 +21,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     LayoutModule,
     BrowserAnimationsModule,
     ProductSearchComponent,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CartComponent
   ],
   providers: [
     {

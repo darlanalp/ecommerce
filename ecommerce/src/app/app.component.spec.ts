@@ -4,6 +4,7 @@ import { LayoutModule } from 'modules/layout';
 import { AppComponent } from './app.component';
 import { ProductSearchComponent } from 'product-search';
 import { HttpClientTestingModule } from "@angular/common/http/testing"
+import { CartComponent } from 'product-ui';
 
 describe('AppComponent', () => {
 
@@ -11,7 +12,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, LayoutModule, ProductSearchComponent, HttpClientTestingModule],
+      imports: [RouterTestingModule, LayoutModule, ProductSearchComponent, HttpClientTestingModule, CartComponent],
       declarations: [AppComponent],
     }).compileComponents();
 
