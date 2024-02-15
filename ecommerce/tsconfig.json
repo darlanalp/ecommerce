@@ -27,5 +27,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "extends": "./tsconfig.base.json"
+  "extends": "./tsconfig.base.json" 
 }
