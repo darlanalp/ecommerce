@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          #fetch-depth: 0
-          path: ecommerce
+          path: /home/runner/work/ecommerce/ecommerce
+          fetch-depth: 0          
       - uses: nrwl/nx-set-shas@v3
       - run: npm ci
       - run: npx nx format:check
