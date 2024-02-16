@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           #fetch-depth: 0
-          path: /home/runner/work/ecommerce/ecommerce
+          path: ecommerce/ecommerce
       - uses: nrwl/nx-set-shas@v3
       - name: Acessar a pasta desejada
         run: cd ecommerce
