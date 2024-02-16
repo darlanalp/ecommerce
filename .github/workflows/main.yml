@@ -15,7 +15,8 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
       - name: Acessar a pasta desejada
         run: cd /home/runner/work/ecommerce/ecommerce
-             ls
+      - name: Definir o diretório de trabalho
+        working-directory: /home/runner/work/ecommerce/ecommerce
       - run: npm ci
       - run: npx nx format:check
       - run: npx nx affected -t lint --parallel=3
