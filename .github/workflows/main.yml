@@ -14,10 +14,6 @@ jobs:
           #fetch-depth: 0
           path: ecommerce
       - uses: nrwl/nx-set-shas@v3
-      - name: Acessar a pasta desejada
-        run: cd ecommerce
-      - name: Verificar existência do package.json
-        run: ls        
       - run: npm ci
       - run: npx nx format:check
       - run: npx nx affected -t lint --parallel=3
