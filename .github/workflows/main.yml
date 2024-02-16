@@ -12,10 +12,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           #fetch-depth: 0
-          path: ecommerce/ecommerce
+          path: ecommerce
       - uses: nrwl/nx-set-shas@v3
       - name: Acessar a pasta desejada
-        run: cd ecommerce/ecommerce
+        run: cd ecommerce
       - name: Verificar existência do package.json
         run: ls        
       - run: npm ci
